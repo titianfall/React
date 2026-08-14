@@ -1,0 +1,35 @@
+{
+  // --- 들여쓰기: 전역 4칸 공백 ---
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+
+  // --- 저장 시 린트만 자동 수정 ---
+  // Prettier는 printWidth(80) 안에 들어오는 줄을 무조건 한 줄로 합친다.
+  // 그 동작을 끄는 옵션이 없으므로 저장 시 자동 포맷 자체를 껐다.
+  // 포맷이 필요하면 Shift+Alt+F 또는 `npx prettier --write src`.
+  "editor.formatOnSave": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // --- ESLint: flat config가 my-app/ 안에 있으므로 작업 디렉터리를 지정 ---
+  "eslint.workingDirectories": [
+    { "directory": "my-app", "changeProcessCwd": true }
+  ],
+
+  // --- JS/JSX 자동완성 강화 ---
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.suggest.autoImports": true,
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+
+  // --- IntelliJ 키맵: camelCase 안에서 단어 단위 이동 ---
+  "intellij-idea-keybindings.useCamelHumpsWords": true,
+
+  // --- Error Lens: 에러/경고만 인라인 표시 (힌트까지 켜면 시끄러움) ---
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"]
+}
