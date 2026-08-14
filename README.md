@@ -53,13 +53,18 @@ React/
 ├─ notes/
 │  ├─ README.md        # 30초 요약 인덱스 (모든 장의 요약 모음)
 │  └─ chXX.md          # 장별 정리 노트
-└─ my-app/             # Vite + React 앱 (현재는 create vite 스캐폴딩 그대로)
+└─ my-app/             # Vite + React 앱
    └─ src/
       ├─ App.jsx
-      └─ main.jsx
+      ├─ main.jsx
+      └─ chapters/
+         ├─ ch03/                    # JSX
+         ├─ ch04-elementRendering/   # 엘리먼트 렌더링
+         └─ ch05-component-props/    # 컴포넌트와 Props
 ```
 
-실습 코드는 아직 없습니다. 직접 작성한 코드가 생기면 `my-app/src/chapters/chXX-<주제>/`로 나눠 담을 예정입니다.
+각 장 폴더 안의 `study*/`에는 **책 예제를 그대로 따라 친 코드**를, 바깥에는 **실습 결과물**을 둡니다.
+노트(`notes/chXX.md`)의 본문에서 해당 파일로 링크를 겁니다.
 
 ## 진도표
 
@@ -71,9 +76,9 @@ React/
 | 0 | 준비하기 | [ch00.md](notes/ch00.md) | [React 설치하기](https://ko.react.dev/learn/installation) | ☑ |
 | 1 | 리액트 소개 | [ch01.md](notes/ch01.md) | [빠른 시작](https://ko.react.dev/learn) | ☑ |
 | 2 | 리액트 시작하기 | [ch02.md](notes/ch02.md) | [React 프로젝트 시작하기](https://ko.react.dev/learn/start-a-new-react-project) | ☑ |
-| 3 | JSX | — | [JSX로 마크업 작성하기](https://ko.react.dev/learn/writing-markup-with-jsx) | ☐ |
-| 4 | 엘리먼트 렌더링 | — | [렌더링하고 커밋하기](https://ko.react.dev/learn/render-and-commit) | ☐ |
-| 5 | 컴포넌트와 Props | — | [컴포넌트에 props 전달하기](https://ko.react.dev/learn/passing-props-to-a-component) | ☐ |
+| 3 | JSX | [ch03.md](notes/ch03.md) | [JSX로 마크업 작성하기](https://ko.react.dev/learn/writing-markup-with-jsx) | ☑ |
+| 4 | 엘리먼트 렌더링 | [ch04.md](notes/ch04.md) | [렌더링하고 커밋하기](https://ko.react.dev/learn/render-and-commit) | ☑ |
+| 5 | 컴포넌트와 Props | [ch05.md](notes/ch05.md) | [컴포넌트에 props 전달하기](https://ko.react.dev/learn/passing-props-to-a-component) | ☐ |
 | 6 | State와 생명주기 | — | [State: 컴포넌트의 기억 저장소](https://ko.react.dev/learn/state-a-components-memory) | ☐ |
 | 7 | 훅 | — | [Hook 레퍼런스](https://ko.react.dev/reference/react/hooks) | ☐ |
 | 8 | 이벤트 핸들링 | — | [이벤트에 응답하기](https://ko.react.dev/learn/responding-to-events) | ☐ |
@@ -118,3 +123,8 @@ docs: README 진도표 갱신
 | `create-react-app`으로 프로젝트 생성 | 지원 중단. Vite 또는 Next.js 권장 |
 | `ReactDOM.render()` | React 18부터 `createRoot()` |
 | 클래스 컴포넌트 + 생명주기 메서드 | 함수 컴포넌트 + Hook 권장 |
+| 전역 `React` · `ReactDOM` 사용 (CDN 스크립트 기준) | `import { createRoot } from 'react-dom/client'` |
+| `React.createElement`를 쓰려면 `React` import 필요 | JSX만 쓴다면 `import React` 불필요 (React 17+ 새 JSX 변환) |
+| 4장 `tick()`에서 **매초 `createRoot()` 호출** | `createRoot()`는 한 번만, `render()`만 반복 |
+| 4장 시계 예제를 `setInterval` + 반복 `render()`로 구현 | `useState` + `useEffect`로 컴포넌트가 스스로 갱신 |
+| 5장 `function Welcome(props)` → `props.name` | 구조 분해 `function Welcome({ name })`이 일반적 |
