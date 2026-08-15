@@ -1,13 +1,13 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import CommentList from "./chapters/ch05-component-props/ex/CommentList.jsx";
+import NotificationList from "./chapters/ch06-state-lifecycle/ex/NotificationList.jsx";
 
 const root = createRoot(document.getElementById('root'));
 
 root.render(
     <StrictMode>
-        <CommentList />
+        <NotificationList />
     </StrictMode>
 );
 
