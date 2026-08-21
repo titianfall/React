@@ -10,9 +10,15 @@ export default defineConfig([
     files: ['**/*.{js,jsx}'],
     extends: [
       js.configs.recommended,
-      reactHooks.configs.flat.recommended,
       reactRefresh.configs.vite,
     ],
+    plugins: { 'react-hooks': reactHooks },
+    // react-hooks recommended는 React Compiler용 규칙(purity, immutability, refs 등)까지
+    // 전부 켜서 학습용 예제 코드에 너무 많이 걸린다. 실제 훅 버그를 잡는 핵심 2개만 남긴다.
+    rules: {
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+    },
     languageOptions: {
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },

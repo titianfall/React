@@ -23,7 +23,6 @@ function Accommodate(props) {
     // dependency Array가 존재하는 useEffect << count 값이 변경되었을 경우
     // ComponentMount() 직후 실행 및 count 값을 isFull이라는 state에 저장합니다.
     useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect -- 책 예제 그대로 학습 중: effect 안에서 파생 state를 setState하는 옛 패턴
         setIsFull(count >= MAX_CAPACITY);
         console.log(`Current count value: ${count}`);
     }, [count]);
