@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Toggle2 from "../Toggle.jsx";
 
 function ConfirmButton(props) {
     const [isConfirmed, setIsConfirmed] = useState(false);

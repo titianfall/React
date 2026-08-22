@@ -42,7 +42,7 @@ function Toggle2(props) {
 
     // 방법2. arrow function을 을 사용하여 정의
     const handleClick3 = () => {
-        setIsToggleOn((isToggleon) => !isToggleOn);
+        setIsToggleOn((isToggleOn) => !isToggleOn);
     };
 
     return (
