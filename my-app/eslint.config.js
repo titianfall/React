@@ -31,7 +31,11 @@ export default defineConfig([
     languageOptions: {
       globals: { React: 'readonly', ReactDOM: 'readonly' },
     },
-    // 대조용 스니펫은 어디에도 쓰이지 않는 변수를 선언한 채 두는 것이 정상이다.
-    rules: { 'no-unused-vars': 'off' },
+    // 대조용 스니펫은 어디에도 쓰이지 않는 변수를 선언한 채 두는 것이 정상이고,
+    // export 없이 파일 안에서 바로 ReactDOM.render를 호출하는 책의 CDN 스타일도 정상이다.
+    rules: {
+      'no-unused-vars': 'off',
+      'react-refresh/only-export-components': 'off',
+    },
   },
 ]);

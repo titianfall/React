@@ -1,13 +1,13 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import LandingPage from "./chapters/ch-09-conditional-redering/ex/LandingPage.jsx";
+import AttendanceBook from "./chapters/ch10-list-key/ex/AttendanceBook.jsx";
 
 const root = createRoot(document.getElementById('root'));
 
 root.render(
     <StrictMode>
-        <LandingPage />
+        <AttendanceBook />
     </StrictMode>
 );
 
